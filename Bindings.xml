@@ -1,0 +1,107 @@
+<Bindings>
+	<Binding name="FREDOAUTOTARGET_SLOT1" header="FREDOAUTOTARGET">
+		FredoAutoTarget_UseSlot(1)
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_SLOT2">
+		FredoAutoTarget_UseSlot(2)
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_SLOT3">
+		FredoAutoTarget_UseSlot(3)
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_SLOT4">
+		FredoAutoTarget_UseSlot(4)
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_SLOT5">
+		FredoAutoTarget_UseSlot(5)
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_SLOT6">
+		FredoAutoTarget_UseSlot(6)
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_SLOT7">
+		FredoAutoTarget_UseSlot(7)
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_SLOT8">
+		FredoAutoTarget_UseSlot(8)
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_SLOT9">
+		FredoAutoTarget_UseSlot(9)
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_SLOT10">
+		FredoAutoTarget_UseSlot(10)
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_SLOT11">
+		FredoAutoTarget_UseSlot(11)
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_SLOT12">
+		FredoAutoTarget_UseSlot(12)
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_SLOT13">
+		FredoAutoTarget_UseSlot(13)
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_SLOT14">
+		FredoAutoTarget_UseSlot(14)
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_SLOT15">
+		FredoAutoTarget_UseSlot(15)
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_SLOT16">
+		FredoAutoTarget_UseSlot(16)
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_SLOT17">
+		FredoAutoTarget_UseSlot(17)
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_SLOT18">
+		FredoAutoTarget_UseSlot(18)
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_SLOT19">
+		FredoAutoTarget_UseSlot(19)
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_SLOT20">
+		FredoAutoTarget_UseSlot(20)
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_SLOT21">
+		FredoAutoTarget_UseSlot(21)
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_SLOT22">
+		FredoAutoTarget_UseSlot(22)
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_SLOT23">
+		FredoAutoTarget_UseSlot(23)
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_SLOT24">
+		FredoAutoTarget_UseSlot(24)
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_TOGGLE">
+		FredoAutoTarget_Toggle()
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_OPTIONS">
+		FredoAutoTarget_ToggleOptions()
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_NEXT">
+		FredoAutoTarget_Cycle(false)
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_PREV">
+		FredoAutoTarget_Cycle(true)
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_PLAYER">
+		FredoAutoTarget_Select("player")
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_LOWEST">
+		FredoAutoTarget_Select("weak")
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_ASSIST">
+		FredoAutoTarget_Select("assist")
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_MARK">
+		FredoAutoTarget_Select("mark")
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_CASTER">
+		FredoAutoTarget_Select("caster")
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_HEAL">
+		FredoAutoTarget_Select("heal")
+	</Binding>
+	<Binding name="FREDOAUTOTARGET_CLEAR">
+		FredoAutoTarget_ClearTarget()
+	</Binding>
+</Bindings>

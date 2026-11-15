@@ -1,0 +1,15 @@
+## Interface: 11200
+## Title: Fredo AutoTarget
+## Notes: Universal auto-target 2.0: for each spell on your list, picks the target with filters (in combat, in range, not crowd-controlled / pet / tapped) using 9 modes (keep, in range, nearest, assist, priority, weakest, caster, heal, none), then casts the spell and auto-attacks. Class presets, profiles, /fat. English and French.
+## Notes-frFR: Auto-cible universelle 2.0 : pour chaque sort de ta liste, choisit la cible avec des filtres (en combat, a portee, sans mob controle/familier/tape) selon 9 modes (garder, a portee, plus proche, assister, prioritaire, plus faible, lanceur, soigner, aucun), puis lance le sort et l auto-attaque. Presets de classe, profils, /fat. Francais et anglais.
+## Version: 2.1.0
+## Author: Shikiwa + Claude (pour Fredo)
+## SavedVariablesPerCharacter: FredoAutoTargetDB
+
+FAT_Loc.lua
+FAT_LocEN.lua
+FAT_Data.lua
+FredoAutoTarget.lua
+FAT_Cmd.lua
+FAT_Widgets.lua
+FAT_UI.lua
