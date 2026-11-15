@@ -8,7 +8,7 @@
 FredoAutoTarget = FredoAutoTarget or {}
 local FAT = FredoAutoTarget
 
-FAT.VERSION = "2.1.0"
+FAT.VERSION = "2.1.1"
 FAT.DB_VERSION = 2
 FAT.MAX_SLOTS = 24
 

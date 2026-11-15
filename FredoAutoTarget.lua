@@ -681,6 +681,11 @@ function FAT.Eval(unit, F, spell, ctx)
 	if not FAT.InReach(unit, spell, F.dist) then
 		return false, "far"
 	end
+	-- mode "a portee" : la cible doit etre a portee DU SORT (pas seulement dans la distance maximale reglee,
+	-- sinon un sort de melee choisit un mob a 30 m). Si la portee du sort est inconnue, on garde la distance.
+	if F.mode == "range" and FAT.SpellRange(spell, unit) == 0 then
+		return false, "far"
+	end
 	if F.los and (not FAT.InSight(unit)) then
 		return false, "los"
 	end
@@ -1159,6 +1164,7 @@ end
 function FAT.RunMode(mode, e, spell, F, ctx)
 	local S = FAT.S
 	local ST = FAT.ST
+	F.mode = mode -- le mode reellement execute (le repli "plus proche" ne doit pas exiger la portee du sort)
 	if mode == "none" then
 		return true, "nochange"
 	elseif mode == "heal" then
