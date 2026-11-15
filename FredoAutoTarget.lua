@@ -1225,6 +1225,7 @@ end
 -- changed = la cible a change pendant Prepare : l'auto-attaque en cours
 -- vise l'ancienne cible et LEAVE_COMBAT n'est pas encore arrive, donc
 -- on relance l'attaque sur la nouvelle.
+FAT.STICKY = 0.7 -- s : apres un sort, la cible ne change plus (evite d'annuler Charge / un sort en cours)
 function FAT.StartAttack(e, changed)
 	if e.attack and e.mode ~= "heal" and FAT.IsHostile() and (changed or (not FAT.ST.attacking)) then
 		FAT.d(FAT.Tr("auto-attaque"))
@@ -1232,6 +1233,20 @@ function FAT.StartAttack(e, changed)
 			AttackTarget()
 		end
 	end
+end
+
+-- Vrai si un sort vient d'etre lance et que la cible actuelle est toujours un ennemi valide : on ne la change pas
+-- (spam d'une touche : ClearTarget + nouveau scan annulait la Charge en cours -> "Interrompu", et coupait l'auto-attaque).
+function FAT.KeepAfterCast(e)
+	local ST = FAT.ST
+	if e.mode == "heal" or e.mode == "assist" then
+		return false
+	end
+	if (not ST.lastCastAt) or (GetTime() - ST.lastCastAt) >= FAT.STICKY then
+		return false
+	end
+	-- la cible doit etre celle de ce dernier sort : si le joueur en a pris une autre a la main, on reprend le fonctionnement normal
+	return FAT.IsHostile() and FAT.TargetKey() == ST.lastCastKey
 end
 
 function FAT.SetLast(spell, mode, ok, why)
@@ -1257,10 +1272,14 @@ function FAT.Engage(e, spell, castFn)
 	local before = FAT.TargetKey()
 	local snap = FAT.Snapshot()
 	local ok, why, used = true, "ok", e.mode
+	local kept = false
 	if FAT.IsCasting() then
 		-- changer de cible pendant une incantation risque de la casser
 		why = "incant"
 		FAT.d(FAT.Tr("incantation en cours : cible inchangee"))
+	elseif FAT.KeepAfterCast(e) then
+		kept = true
+		FAT.d(FAT.Tr("sort lance a l'instant : cible inchangee"))
 	else
 		local okp, a, b, c = pcall(FAT.Prepare, e, spell)
 		if okp then
@@ -1287,6 +1306,10 @@ function FAT.Engage(e, spell, castFn)
 	if not ok2 then
 		ST.busy = false
 		error(err2, 0)
+	end
+	if not kept then -- la fenetre ne glisse pas pendant le spam : un scan au plus toutes les FAT.STICKY secondes
+		ST.lastCastAt = GetTime()
+		ST.lastCastKey = FAT.TargetKey()
 	end
 	local ok3, err3 = pcall(FAT.StartAttack, e, changed)
 	if not ok3 then

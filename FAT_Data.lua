@@ -8,7 +8,7 @@
 FredoAutoTarget = FredoAutoTarget or {}
 local FAT = FredoAutoTarget
 
-FAT.VERSION = "2.1.1"
+FAT.VERSION = "2.1.2"
 FAT.DB_VERSION = 2
 FAT.MAX_SLOTS = 24
 
@@ -59,14 +59,14 @@ FAT.DEFAULTS = {
 	enabled = true,
 	debug = false,
 	-- filtres d'acquisition (globaux ; chaque sort peut les remplacer)
-	combat = true,       -- seulement les mobs en combat (contre moi / mon groupe)
+	combat = false,      -- true = seulement les mobs deja en combat (contre moi / mon groupe) ; false = le plus proche, meme au repos
 	dist = 30,           -- distance max en metres (0 = portee du sort)
 	pets = true,         -- ignorer familiers, totems, bestioles, civils
 	cc = true,           -- ignorer les mobs controles (poly, sap, gel, piege...)
-	tapped = true,       -- ignorer les mobs deja tapes par un autre groupe
+	tapped = false,      -- true = ignorer les mobs deja tapes par un autre groupe
 	los = true,          -- ligne de vue (si UnitXP est present)
 	pvpsafe = true,      -- ignorer les joueurs ennemis si je ne suis pas en PvP
-	pull = false,        -- autoriser a choisir un mob hors combat (pull) quand je suis hors combat
+	pull = true,         -- autoriser a choisir un mob hors combat (pull) quand je suis hors combat
 	-- re-ciblage / modes
 	retarget = true,     -- nouvelle cible quand la mienne meurt en combat
 	retargetGap = 0.5,   -- au plus un changement automatique par intervalle (s)

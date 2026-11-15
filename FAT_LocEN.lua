@@ -19,6 +19,7 @@ FredoAutoTarget.EN = {
 	["erreur TargetNearestEnemy : %s"] = "TargetNearestEnemy error: %s",
 	["auto-attaque"] = "auto-attack",
 	["incantation en cours : cible inchangee"] = "casting in progress: target unchanged",
+	["sort lance a l'instant : cible inchangee"] = "spell just cast: target unchanged",
 	["erreur ciblage : %s"] = "targeting error: %s",
 	["pas de cible pour %s : %s"] = "no target for %s: %s",
 	["joueurs seulement : aucun joueur ennemi, sort non lance"] = "players only: no enemy player, spell not cast",
